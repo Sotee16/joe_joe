@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import navbarImg from '../assets/navbar.jpg'; 
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -20,8 +21,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar navbar-expand-lg ${darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-light'} fixed-top shadow-sm`}>
+    <> 
+    <nav className={`navbar navbar-expand-lg ${darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-light'} fixed-top shadow-sm`} style={{background:'purple',}}>
       <div className="container">
+        <img  src={navbarImg} alt="Logo" className="navbar-brand-logo me-4 rounded-circle mb-2"
+          style={{ width: '50px', height: '50px', objectFit: 'cover' }} />
         <a className="navbar-brand fw-bold" href="#">Joseph Gayflor</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span className="navbar-toggler-icon"></span>
@@ -31,7 +35,17 @@ const Navbar = () => {
             <li className="nav-item"><a className="nav-link" href="#home">Home</a></li>
             <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
             <li className="nav-item"><a className="nav-link" href="#achievements">Achievements</a></li>
+            <li className="nav-item"><a  className="nav-link" href="#autobiography" >Autobiography</a></li>
             <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
+            <li className='nav-item'><a className="nav-link" href="#about">About</a></li>
+            {/* <button
+  className="btn btn-outline-primary ms-2"
+  data-bs-toggle="offcanvas"
+  data-bs-target="#resumeDrawer"
+>
+  📄 View Resume
+</button> */}
+
           </ul>
 
           {/* Dark mode toggle button */}
@@ -41,6 +55,8 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+ 
+    </>
   );
 };
 

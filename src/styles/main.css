@@ -1,10 +1,31 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #f8f9fa;
+    color: #212529;
+    padding-top: 40px;
+    width: 100%;
+    height: 100%;
 }
 
 img {
     max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* Dark Mode */
@@ -13,11 +34,7 @@ body.dark-mode {
     color: #f1f1f1;
 }
 
-body.dark-mode .bg-light {
-    background-color: #1e1e1e !important;
-    color: #f1f1f1;
-}
-
+body.dark-mode .bg-light,
 body.dark-mode .bg-white {
     background-color: #1e1e1e !important;
     color: #f1f1f1;
@@ -26,4 +43,82 @@ body.dark-mode .bg-white {
 body.dark-mode .card {
     background-color: #2c2c2c;
     color: #fff;
+}
+
+.SliderInLeft {
+    /* background-attachment: fixed; */
+    text-align: center;
+    color: white;
+    font-size: 34px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding: 8px;
+    margin: 0;
+    text-transform: capitalize;
+    animation-name: sliderInLeft;
+}
+
+@keyframes SliderInLeft {
+    from {
+        transform: translateX(-650px);
+    }
+
+    to {
+        transform: translatex(650);
+    }
+}
+
+.SliderInLeft {
+    animation: SliderInLeft 5s ease-in 1s infinite normal forwards;
+
+    transform: translateX(650px);
+}
+
+.containerr {
+    background-color: green;
+    width: 100%;
+
+}
+
+/* achievements navbar style */
+.nav-links {
+    font-size: 34;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: purple;
+    padding: 8px;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.3s ease;
+}
+
+.nav-links:hover {
+    outline-width: 100px;
+    outline-color: purple;
+    /* outline-style: initial; */
+    color: green;
+}
+
+.nav-links ::before {
+    content: " ";
+    width: 100px;
+    color: red;
+}
+
+/* autobiography style */
+.texts {
+    /* background-attachment: fixed; */
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding: 8px;
+    margin: 0;
+
+}
+
+.footers {
+    position: relative;
+    right: 0;
 }

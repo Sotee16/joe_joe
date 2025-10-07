@@ -1,43 +1,65 @@
-import React, { useEffect } from 'react'
-import AOS from 'aos'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Projects from './components/Projects'
-import Achievements from './components/Achievements'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import React, { useEffect, useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from "./components/About";
+import Projects from './components/Projects';
+import Achievements from './components/Achievements';
+// import SKills from './components/Skills';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import Testimonials from './components/Testimonials';
+import Blog from './components/Blog';
+import Autobiography from "./components/Autobiography";
+import ScrollToTop from './components/ScrollToTop';
+import Loader from './components/Loader';
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
+
   useEffect(() => {
-    AOS.init({ duration: 1000 })
-  }, [])
+    AOS.init({ duration: 1000 });
+
+    // Simulate loading progress
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          setTimeout(() => setLoading(false), 1000); // Delay to show fade-out
+          return 100;
+        }
+        return prev + 5;
+      });
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  
 
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Projects />
-      <Achievements />
-      <Contact />
-      <Footer />
+      {loading && <Loader progress={progress} />}
+      {!loading && (
+        <>
+          <Navbar />
+          <Hero />
+          <About />
+          <Projects />
+          <Achievements /> 
+          {/* <Skills/>  */}
+          <Autobiography />
+          <Testimonials />
+          <Blog />
+          <Contact />
+          <Footer />
+          <ScrollToTop />
+        </>
+      )}
     </>
-  )
-}
+  );
+};
 
-export default App
-// This is the main entry point of the React application.
-// It imports necessary components and initializes AOS for animations.
-
-// useEffect(() => {
-//   // Tawk.to live chat integration
-//   var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-//   (function () {
-//     var s1 = document.createElement("script"),
-//       s0 = document.getElementsByTagName("script")[0];
-//     s1.async = true;
-//     s1.src = "https://embed.tawk.to/YOUR_PROPERTY_ID_HERE/default"; // <-- Replace with your real URL
-//     s1.charset = "UTF-8";
-//     s1.setAttribute("crossorigin", "*");
-//     s0.parentNode.insertBefore(s1, s0);
-//   })();
-// }, []);
+export default App;
