@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import navbarImg from '../assets/navbar.JPG'; 
+import navbarImg from '../assets/navbar.jpg'; 
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Loader.css';
-import logo from '../assets/logo.png'; 
+import logo from '../assets/logo.png';
 
 const Loader = ({ progress }) => (
   <div className="loader-wrapper fade-out-start">

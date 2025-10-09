@@ -16,20 +16,22 @@ const Footer = () => {
           </p>
        </div>
 
-       <div className="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div className="row mt-6" data-aos="fade-up" data-aos-delay="100">
+        
           <h5 className="fw-bold text-white">Contact Us</h5>
          <nav className={`navbar navbar-expand-lg justify-content-center   `}>
 
-          <ul className="navbar-nav me-3">
-            <li className='footers'><i className="bi bi-geo-alt-fill me-2 text-green"></i>Monrovia, Liberia</li>
-            <li className='footers'><i className="bi bi-telephone-fill me-2 text-green"></i>+231776103720</li>
-            <li className='footers'><i className="bi bi-telephone-fill me-2 text-green"></i>+231886334033</li>
-            <li className='footers'><i className="bi bi-envelope-fill me-2 text-green"></i>josephgayflor73@gmail.com</li>
+          <ul className=" footers navbar-nav me-3">
+            <li><i className="bi bi-geo-alt-fill me-2 text-green"></i>Monrovia, Liberia</li>
+            <li><i className="bi bi-telephone-fill me-2 text-green"></i>+231776103720</li>
+            <li><i className="bi bi-telephone-fill me-2 text-green"></i>+231886334033</li>
+            <li><i className="bi bi-envelope-fill me-2 text-green"></i>josephgayflor73@gmail.com</li>
           </ul>
           </nav>
-        </div>
+       </div>
 
-          <div className="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div className="col-md-4" data-aos="fade-up" data-aos-delay="200">
+         
           <h5 className="fw-bold text-white">Follow Us</h5>
           <div className="d-flex gap-3">
             <a href="https://www.facebook.com/share/19PwP7iAzW/?mibextid=wwXIfr" target="_blank">
@@ -46,8 +48,11 @@ const Footer = () => {
               <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
 
             </a>
+            
           </div>
+          
         </div>
+        
       </div>
 
       <hr class="border-light mt-4" />
